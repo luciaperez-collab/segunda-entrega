@@ -100,7 +100,11 @@ function MostrarCarrito(){
     const BotonCerrarCarrito = document.createElement('button');
     BotonCerrarCarrito.textContent = 'Cerrar X';
     BotonCerrarCarrito.style.marginTop = "20px";
-    BotonCerrarCarrito.onclick = () => VentanaDelCarrito.style.display = "none";
+
+    BotonCerrarCarrito.addEventListener('click', () => {
+    VentanaDelCarrito.style.display = "none";
+    });
+
     VentanaDelCarrito.appendChild(BotonCerrarCarrito);
     VentanaDelCarrito.style.display = "block";
 
@@ -115,11 +119,11 @@ function MostrarCarrito(){
     BotonVaciar.style.cursor = "pointer";
 
 
-    BotonVaciar.onclick = () => {
+    BotonVaciar.addEventListener('click',() => {
         ProductosDelCarrito = []; 
         BotonParaVerCarrito.innerHTML = `Ver Carrito (0)`; 
         MostrarCarrito();
-};
+    });
 
 VentanaDelCarrito.appendChild(BotonVaciar);
 
@@ -167,7 +171,7 @@ Productos.forEach(item => {
         Carrito.disabled = true;
     }
 
-    Carrito.onclick = () => {
+    Carrito.addEventListener('click',() => {
     ProductosDelCarrito.push(item);
     BotonParaVerCarrito.innerHTML = `Ver Carrito (${ProductosDelCarrito.length})`;
 
@@ -182,7 +186,7 @@ Productos.forEach(item => {
         Carrito.innerHTML = textoOriginal;
         Carrito.style.backgroundColor = colorOriginal;
     }, 1000);
-};
+});
 
     Tarjeta.appendChild(Carrito);
     ContenedorPrincipal.appendChild(Tarjeta);
