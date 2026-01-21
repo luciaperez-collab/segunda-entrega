@@ -188,6 +188,8 @@ Productos.forEach(item => {
     }, 1000);
 });
 
+//probando una funcion asincronica para crear una imagen mas realista.
+
     Tarjeta.appendChild(Carrito);
     ContenedorPrincipal.appendChild(Tarjeta);
 });
